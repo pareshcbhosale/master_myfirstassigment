@@ -1,0 +1,57 @@
+
+
+<div style="width: 100%;
+overflow:auto;">
+   <div style="float:left; width: 40%">
+     <table class="table table-striped table-hover " >
+        <style>
+         table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+      </style>
+  
+  
+  <thead>
+    <tr >
+      <th (click)="changeSorting('name')">Car Name</th>
+      <th (click)="changeSorting('brand')">Brand</th>
+      <th (click)="changeSorting('engine')">Engine</th>
+      <th (click)="changeSorting('price')">Price</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of jsonProductList;let count=index" (click)="clicked(count)" >
+     <td>{{item.name}}</td>
+     
+
+      
+      <td>{{item.brand}}</td>
+       <td>{{item.engine}}</td>
+     
+      <td>{{item.price}}</td>      
+    </tr>
+    <input type="button" value="Edit" class="btn btn-primary" data-ng-click='EditRow(O)' />
+  </tbody>
+  </table> 
+   </div>
+   <div style="float:right;width: 55%;">
+     <h1>{{selCarName}}</h1>
+     
+    <p word-break: break-all >{{selCarDesc}}</p>
+   </div>
+</div>
+
+
+
+
